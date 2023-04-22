@@ -1,12 +1,28 @@
 import React from 'react';
-import { FoneImage, Ramka, UserCardStyled } from './UserCard.styled';
+import {
+  BorderImage,
+  FoneImage,
+  Line,
+  UserCardStyled,
+  UserImage,
+  TweetsText,
+  FollowersText,
+  ButtonFollow,
+} from './UserCard.styled';
 import foneImage from 'img/picture2_1@2x.png';
+import borderImage from 'img/ramka.png';
+import userImage from 'img/userAvatar.png';
 
 export const UserCard = () => {
   return (
     <UserCardStyled>
       <FoneImage src={foneImage} alt="fone" />
-      <Ramka></Ramka>
+      <Line></Line>
+      <BorderImage src={borderImage} alt="border" />
+      <UserImage src={userImage} alt="user Avatar" />
+      <TweetsText>777 tweets</TweetsText>
+      <FollowersText>100,500 Followers</FollowersText>
+      <ButtonFollow>Follow</ButtonFollow>
     </UserCardStyled>
   );
 };
