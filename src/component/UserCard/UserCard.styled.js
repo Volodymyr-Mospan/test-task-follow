@@ -46,15 +46,13 @@ export const BorderImage = styled.img`
     inset 0px -2.19582px 4.39163px #ae7be3,
     inset 0px 4.39163px 3.29372px #fbf8ff;
   border-radius: 50%;
-
-  background: #5736a3;
 `;
 
 export const UserImage = styled.img`
   position: absolute;
-  top: 187px;
-  left: 159px;
-  width: 62px;
+  top: 186px;
+  left: 158px;
+  width: 64px;
 
   border-radius: 50%;
 `;

@@ -9,20 +9,20 @@ import {
   FollowersText,
   ButtonFollow,
 } from './UserCard.styled';
-import { fetchUsers } from 'services/Api';
+import { fetchUsers } from 'services/api';
 import foneImage from 'img/picture2_1@2x.png';
 import borderImage from 'img/ramka.png';
-import userImage from 'img/userAvatar.png';
+// import userImage from 'img/userAvatar.png';
 
-export const UserCard = () => {
+export const UserCard = ({ tweets, followers, avatar }) => {
   return (
     <UserCardStyled>
       <FoneImage src={foneImage} alt="fone" />
       <Line></Line>
+      <UserImage src={avatar} alt="user Avatar" />
       <BorderImage src={borderImage} alt="border" />
-      <UserImage src={userImage} alt="user Avatar" />
-      <TweetsText>777 tweets</TweetsText>
-      <FollowersText>100,500 Followers</FollowersText>
+      <TweetsText>{tweets} tweets</TweetsText>
+      <FollowersText>{followers} Followers</FollowersText>
       <ButtonFollow onClick={() => fetchUsers()}>Follow</ButtonFollow>
     </UserCardStyled>
   );

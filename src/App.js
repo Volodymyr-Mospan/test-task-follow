@@ -2,11 +2,11 @@ import React, { useEffect, useState } from 'react';
 
 // import logo from './logo.svg';
 
-import { UserCard } from 'component/UserCard';
-import { fetchUsers } from 'services/Api';
+import { fetchUsers } from 'services/api';
+import { UserList } from 'component/UserList/UserList';
 
 function App() {
-  const [users, setUsers] = useState([]);
+  const [users, setUsers] = useState(null);
 
   console.log(users);
 
@@ -23,11 +23,9 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
+    <div>
       <header></header>
-      <main>
-        <UserCard />
-      </main>
+      <main>{users && <UserList users={users} />}</main>
     </div>
   );
 }
