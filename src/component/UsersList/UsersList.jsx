@@ -1,7 +1,7 @@
 import { UserCard } from 'component/UserCard/UserCard';
 import { UsersListItem, UsersListStyled } from './UsersList.styled';
 
-export const UsersList = ({ users, onClick, followingsUsers }) => {
+export const UsersList = ({ users, onClick, followingsUsers, isLoading }) => {
   return (
     <UsersListStyled>
       {users.map(user => {
@@ -15,6 +15,7 @@ export const UsersList = ({ users, onClick, followingsUsers }) => {
               avatar={user.avatar}
               onClick={onClick}
               isFollowing={isFollowing}
+              isLoading={isLoading}
             />
           </UsersListItem>
         );

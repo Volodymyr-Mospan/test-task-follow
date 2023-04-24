@@ -96,6 +96,10 @@ export const ButtonFollow = styled.button`
     background: #d4c2e6;
     box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
   }
+
+  &:disabled {
+    background: #91859e9a;
+  }
 `;
 
 export const ButtonFollowing = styled.button`
@@ -104,5 +108,9 @@ export const ButtonFollowing = styled.button`
   &:active {
     background: #53be97;
     box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+  }
+
+  &:disabled {
+    background: #53be9788;
   }
 `;
