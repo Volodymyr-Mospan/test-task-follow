@@ -21,6 +21,14 @@ export const UserCardStyled = styled.div`
   text-align: center;
 `;
 
+export const Logo = styled.img`
+  position: absolute;
+  top: 20px;
+  left: 20px;
+
+  width: 76px;
+`;
+
 export const FoneImage = styled.img`
   margin-bottom: 88px;
 `;
@@ -81,36 +89,19 @@ export const FollowersText = styled.p`
   color: #ebd8ff;
 `;
 
-const ButtonStyled = styled.button`
-  min-width: 196px;
-  min-height: 50px;
-  margin-bottom: 26px;
-
-  font-weight: 600;
-  font-size: 18px;
-  line-height: 22px;
-  text-transform: uppercase;
-
-  box-shadow: 0px 3.43693px 3.43693px rgba(0, 0, 0, 0.25);
-  border: none;
-  border-radius: 10px;
-
-  cursor: pointer;
-`;
-
-export const ButtonFollow = styled(ButtonStyled)`
+export const ButtonFollow = styled.button`
   background: #ebd8ff;
 
-  &:hover {
+  &:active {
     background: #d4c2e6;
     box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
   }
 `;
 
-export const ButtonFollowing = styled(ButtonStyled)`
+export const ButtonFollowing = styled.button`
   background: #5cd3a8;
 
-  &:hover {
+  &:active {
     background: #53be97;
     box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
   }
