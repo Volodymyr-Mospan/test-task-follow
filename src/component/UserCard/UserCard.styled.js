@@ -4,6 +4,8 @@ export const UserCardStyled = styled.div`
   position: relative;
 
   padding: 28px 36px 36px 36px;
+  margin-left: auto;
+  margin-right: auto;
   width: 380px;
   height: 460px;
 
@@ -79,7 +81,7 @@ export const FollowersText = styled.p`
   color: #ebd8ff;
 `;
 
-export const ButtonFollow = styled.button`
+const ButtonStyled = styled.button`
   min-width: 196px;
   min-height: 50px;
   margin-bottom: 26px;
@@ -88,12 +90,28 @@ export const ButtonFollow = styled.button`
   font-size: 18px;
   line-height: 22px;
   text-transform: uppercase;
-  color: #373737;
 
-  background: #ebd8ff;
   box-shadow: 0px 3.43693px 3.43693px rgba(0, 0, 0, 0.25);
   border: none;
   border-radius: 10px;
 
   cursor: pointer;
+`;
+
+export const ButtonFollow = styled(ButtonStyled)`
+  background: #ebd8ff;
+
+  &:hover {
+    background: #d4c2e6;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+  }
+`;
+
+export const ButtonFollowing = styled(ButtonStyled)`
+  background: #5cd3a8;
+
+  &:hover {
+    background: #53be97;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+  }
 `;

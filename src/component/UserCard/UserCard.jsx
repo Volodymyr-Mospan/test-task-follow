@@ -8,22 +8,28 @@ import {
   TweetsText,
   FollowersText,
   ButtonFollow,
+  ButtonFollowing,
 } from './UserCard.styled';
-import { fetchUsers } from 'services/api';
+import { fetchUsers, followUser } from 'services/api';
 import foneImage from 'img/picture2_1@2x.png';
 import borderImage from 'img/ramka.png';
-// import userImage from 'img/userAvatar.png';
+import { numberWithCommas } from 'services/numberWithComma';
 
-export const UserCard = ({ tweets, followers, avatar }) => {
+export const UserCard = ({ userId, tweets, followers, avatar, onClick }) => {
+  // const handleFollow = () => {};
+
   return (
     <UserCardStyled>
-      <FoneImage src={foneImage} alt="fone" />
+      <FoneImage src={foneImage} alt="Fone" />
       <Line></Line>
-      <UserImage src={avatar} alt="user Avatar" />
-      <BorderImage src={borderImage} alt="border" />
+      <UserImage src={avatar} alt="User's avatar" />
+      <BorderImage src={borderImage} alt="Border" />
       <TweetsText>{tweets} tweets</TweetsText>
-      <FollowersText>{followers} Followers</FollowersText>
-      <ButtonFollow onClick={() => fetchUsers()}>Follow</ButtonFollow>
+      <FollowersText>{numberWithCommas(followers)} Followers</FollowersText>
+      <ButtonFollow onClick={() => onClick(userId, followers + 1)}>
+        Follow
+      </ButtonFollow>
+      <ButtonFollowing onClick={() => fetchUsers()}>Following</ButtonFollowing>
     </UserCardStyled>
   );
 };

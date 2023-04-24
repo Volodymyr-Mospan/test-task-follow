@@ -11,3 +11,15 @@ export const fetchUsers = async () => {
 
   return respons.data;
 };
+
+export const followUser = async (userId, followers) => {
+  const respons = await axios.put(`users/${userId}`, {
+    followers,
+  });
+
+  if (!respons.data) {
+    throw new Error('Nothing found');
+  }
+
+  return respons.data;
+};
