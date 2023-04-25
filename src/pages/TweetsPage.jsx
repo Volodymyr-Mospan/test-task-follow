@@ -79,7 +79,11 @@ const TweetsPage = () => {
           />
         )}
         {page < filteredUsers.length / 3 && (
-          <button type="button" onClick={() => setPage(prev => prev + 1)}>
+          <button
+            type="button"
+            onClick={() => setPage(prev => prev + 1)}
+            style={{ marginBottom: '32px' }}
+          >
             Load More
           </button>
         )}
