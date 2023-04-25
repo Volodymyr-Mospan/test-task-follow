@@ -64,6 +64,7 @@ const TweetsPage = () => {
 
   const filteredUsers = filterUsers(filter, users, followingsUsers);
   const usersOnPage = filteredUsers.filter((_, i) => i < page * 3);
+
   return (
     <TweetsPageStyled>
       <Header filter={filter} onChange={handleOnChange} />
