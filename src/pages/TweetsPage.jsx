@@ -16,23 +16,15 @@ const TweetsPage = () => {
   localStorage.setItem('followings', JSON.stringify(followingsUsers));
 
   useEffect(() => {
-    const abortController = new AbortController();
-
     const getUsers = async () => {
       try {
-        const result = await fetchUsers(abortController);
+        const result = await fetchUsers();
         setUsers(result);
       } catch (error) {
-        if (error.code !== 'ERR_CANCELED') {
-          console.log(error);
-        }
+        console.log(error);
       }
     };
     getUsers();
-
-    return () => {
-      abortController.abort();
-    };
   }, []);
 
   const tungleFollowing = userId => {
@@ -45,7 +37,6 @@ const TweetsPage = () => {
 
   const handleButtonFollow = (userId, followers) => {
     setIsLoading(true);
-
     const putFollow = async () => {
       try {
         const result = await followUser(userId, followers);
@@ -57,9 +48,7 @@ const TweetsPage = () => {
         );
         tungleFollowing(userId);
       } catch (error) {
-        if (error.code !== 'ERR_CANCELED') {
-          console.log(error);
-        }
+        console.log(error);
       } finally {
         setIsLoading(false);
       }
