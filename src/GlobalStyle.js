@@ -2,8 +2,24 @@ import { createGlobalStyle } from 'styled-components';
 import { normalize } from 'styled-normalize';
 
 export const GlobalStyle = createGlobalStyle`
+${normalize}
 
- ${normalize}
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f6effd;
+}
+
+code {
+  color: #91859e9a;
+  font-family: 'Montserrat', sans-serif;
+}
 
  img {
   display: block;

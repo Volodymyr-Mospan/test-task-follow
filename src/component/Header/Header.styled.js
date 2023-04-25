@@ -11,7 +11,6 @@ export const HeaderStyled = styled.header`
   margin-left: auto;
   margin-right: auto;
 
-  /* border-bottom: 1px solid #373737; */
   box-shadow: 0px 6px 5px -3px rgba(0, 0, 0, 0.25);
 `;
 

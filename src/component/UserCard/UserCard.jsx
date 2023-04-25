@@ -11,7 +11,7 @@ import {
   ButtonFollowing,
   Logo,
 } from './UserCard.styled';
-import foneImage from 'img/picture2_1@2x.png';
+import foneImage from 'img/picture2_1.png';
 import logoImage from 'img/Logo.svg';
 import borderImage from 'img/ramka.png';
 import { numberWithCommas } from 'utilities/numberWithComma';
@@ -35,6 +35,7 @@ export const UserCard = ({
     setIsLoadingHere(true);
     onClick(userId, followers + val);
   };
+
   return (
     <UserCardStyled>
       <Logo src={logoImage} alt="Fone" />
