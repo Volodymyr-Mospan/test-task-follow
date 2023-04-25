@@ -1,14 +1,10 @@
-import React, { useEffect, useState } from 'react';
-
-// import logo from './logo.svg';
-
-import { fetchUsers, followUser } from 'services/api';
-import { UsersList } from 'component/UsersList/UsersList';
-import { filterUsers } from 'utilities/filterUsers';
-import { Filter } from 'component/Filter/Filter';
 import { Header } from 'component/Header/Header';
+import { UsersList } from 'component/UsersList/UsersList';
+import { useEffect, useState } from 'react';
+import { fetchUsers, followUser } from 'services/api';
+import { filterUsers } from 'utilities/filterUsers';
 
-function App() {
+const TweetsPage = () => {
   const [users, setUsers] = useState([]);
   const [page, setPage] = useState(1);
   const [filter, setFilter] = useState('all');
@@ -20,15 +16,23 @@ function App() {
   localStorage.setItem('followings', JSON.stringify(followingsUsers));
 
   useEffect(() => {
+    const abortController = new AbortController();
+
     const getUsers = async () => {
       try {
-        const result = await fetchUsers();
+        const result = await fetchUsers(abortController);
         setUsers(result);
       } catch (error) {
-        console.log(error);
+        if (error.code !== 'ERR_CANCELED') {
+          console.log(error);
+        }
       }
     };
     getUsers();
+
+    return () => {
+      abortController.abort();
+    };
   }, []);
 
   const tungleFollowing = userId => {
@@ -41,6 +45,7 @@ function App() {
 
   const handleButtonFollow = (userId, followers) => {
     setIsLoading(true);
+
     const putFollow = async () => {
       try {
         const result = await followUser(userId, followers);
@@ -52,7 +57,9 @@ function App() {
         );
         tungleFollowing(userId);
       } catch (error) {
-        console.log(error);
+        if (error.code !== 'ERR_CANCELED') {
+          console.log(error);
+        }
       } finally {
         setIsLoading(false);
       }
@@ -67,13 +74,10 @@ function App() {
 
   const filteredUsers = filterUsers(filter, users, followingsUsers);
   const usersOnPage = filteredUsers.filter((_, i) => i < page * 3);
-
   return (
-    <div style={{ textAlign: 'center' }}>
-      <Header>
-        <button type="button">Back</button>
-        <Filter filter={filter} onChange={handleOnChange} />
-      </Header>
+    <>
+      <Header filter={filter} onChange={handleOnChange} />
+
       <main>
         {users && (
           <UsersList
@@ -84,13 +88,13 @@ function App() {
           />
         )}
         {page < filteredUsers.length / 3 && (
-          <button type="button" onClick={() => setPage(prev => (prev += 1))}>
+          <button type="button" onClick={() => setPage(prev => prev + 1)}>
             Load More
           </button>
         )}
       </main>
-    </div>
+    </>
   );
-}
+};
 
-export default App;
+export default TweetsPage;

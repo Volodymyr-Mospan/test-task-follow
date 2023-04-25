@@ -1,5 +1,11 @@
-import { HeaderStyled } from './Header.styled';
+import { HeaderStyled, LinkStyled } from './Header.styled';
+import { Filter } from 'component/Filter/Filter';
 
-export const Header = ({ children }) => {
-  return <HeaderStyled>{children}</HeaderStyled>;
+export const Header = ({ filter, onChange }) => {
+  return (
+    <HeaderStyled>
+      <LinkStyled to="/">Back</LinkStyled>
+      <Filter filter={filter} onChange={onChange} />
+    </HeaderStyled>
+  );
 };

@@ -14,6 +14,7 @@ export const SelectStyled = styled.select`
   line-height: 22px;
   text-transform: uppercase;
   color: #373737;
-
   text-align: center;
+
+  cursor: pointer;
 `;
