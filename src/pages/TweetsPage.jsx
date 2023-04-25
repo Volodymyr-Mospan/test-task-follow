@@ -3,6 +3,7 @@ import { UsersList } from 'component/UsersList/UsersList';
 import { useEffect, useState } from 'react';
 import { fetchUsers, followUser } from 'services/api';
 import { filterUsers } from 'utilities/filterUsers';
+import { TweetsPageStyled } from './TweetsPage.styled';
 
 const TweetsPage = () => {
   const [users, setUsers] = useState([]);
@@ -64,7 +65,7 @@ const TweetsPage = () => {
   const filteredUsers = filterUsers(filter, users, followingsUsers);
   const usersOnPage = filteredUsers.filter((_, i) => i < page * 3);
   return (
-    <>
+    <TweetsPageStyled>
       <Header filter={filter} onChange={handleOnChange} />
 
       <main>
@@ -82,7 +83,7 @@ const TweetsPage = () => {
           </button>
         )}
       </main>
-    </>
+    </TweetsPageStyled>
   );
 };
 

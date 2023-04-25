@@ -92,6 +92,7 @@ export const FollowersText = styled.p`
 export const ButtonFollow = styled.button`
   background: #ebd8ff;
 
+  &:hover,
   &:active {
     background: #d4c2e6;
     box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
@@ -105,6 +106,7 @@ export const ButtonFollow = styled.button`
 export const ButtonFollowing = styled.button`
   background: #5cd3a8;
 
+  &:hover,
   &:active {
     background: #53be97;
     box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);

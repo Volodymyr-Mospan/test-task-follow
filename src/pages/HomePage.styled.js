@@ -1,18 +1,39 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
-export const HeaderStyled = styled.header`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  max-width: 1920px;
+export const HomePageStyled = styled.div`
+  height: 100vh;
   padding: 32px;
-  margin-left: auto;
-  margin-right: auto;
 
-  /* border-bottom: 1px solid #373737; */
-  box-shadow: 0px 6px 5px -3px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background: linear-gradient(
+    114.99deg,
+    #471ca9 -0.99%,
+    #5736a3 54.28%,
+    #4b2a99 78.99%
+  );
+  color: #ebd8ff;
+
+  & > h1 {
+    margin-bottom: 16px;
+    font-size: 38px;
+    text-transform: uppercase;
+  }
+  & > h2 {
+    margin-bottom: 8px;
+    font-size: 20px;
+    text-transform: uppercase;
+  }
+  & > p {
+    margin-bottom: 32px;
+    padding-left: 8px;
+
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 22px;
+  }
 `;
 
 export const LinkStyled = styled(Link)`

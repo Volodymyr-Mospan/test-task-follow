@@ -6,16 +6,16 @@ const TweetsPage = lazy(() => import('./pages/TweetsPage'));
 
 function App() {
   return (
-    <div style={{ textAlign: 'center' }}>
-      <Suspense fallback={<div>Loading...</div>}>
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/tweets" element={<TweetsPage />} />
-          <Route path="*" element={<HomePage />} />
-        </Routes>
-      </Suspense>
-    </div>
+    <Suspense fallback={<div>Loading...</div>}>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/tweets" element={<TweetsPage />} />
+        <Route path="*" element={<HomePage />} />
+      </Routes>
+    </Suspense>
   );
 }
 
 export default App;
+
+// style={{ textAlign: 'center' }}

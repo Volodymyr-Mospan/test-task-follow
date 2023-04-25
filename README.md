@@ -1,7 +1,8 @@
 # test-task-followings
 
 This is a test project, made for Career skills on the
-[Full Stack](https://https://goit.global/ua/courses/fullstack/) course.
+[Full Stack](https://https://goit.global/ua/courses/fullstack/) course in GoIT
+Academy.
 
 This project was bootstrapped with
 [Create React App](https://github.com/facebook/create-react-app).

@@ -17,4 +17,12 @@ export const SelectStyled = styled.select`
   text-align: center;
 
   cursor: pointer;
+
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover,
+  &:active {
+    background: #d4c2e6;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+  }
 `;

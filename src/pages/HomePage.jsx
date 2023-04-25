@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
+import { HomePageStyled, LinkStyled } from './HomePage.styled';
 
 const HomePage = () => {
   const location = useLocation();
@@ -12,18 +13,18 @@ const HomePage = () => {
   });
 
   return (
-    <div
-      style={{
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        backgroundColor: '#f6effd',
-      }}
-    >
+    <HomePageStyled>
+      <h1>Followings</h1>
       <p>
-        This is Home Page <Link to="tweets">To Tweets</Link>
+        This is Test Project <br /> for a position of Junior FrontEnd Developer
       </p>
-    </div>
+      <h2>Used technologies:</h2>
+      <p>
+        React, React Router, <br />
+        Styled-components, AXIOS, Mockapi.io
+      </p>
+      <LinkStyled to="tweets">To Tweets</LinkStyled>
+    </HomePageStyled>
   );
 };
 
