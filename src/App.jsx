@@ -1,9 +1,10 @@
 import React, { Suspense, lazy } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import styled from 'styled-components';
+import TweetsPage from 'pages/TweetsPage';
 
 const HomePage = lazy(() => import('./pages/HomePage'));
-const TweetsPage = lazy(() => import('./pages/TweetsPage'));
+// const TweetsPage = lazy(() => import('./pages/TweetsPage'));
 
 const Loading = styled.div`
   height: 100vh;
